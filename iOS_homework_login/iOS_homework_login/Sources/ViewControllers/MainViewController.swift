@@ -14,6 +14,15 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var headerImageViewHeightConstraint: NSLayoutConstraint!
     
+    @IBAction func logout(_ sender: Any) {
+        print("logout")
+        UserDefaults.standard.removeObject(forKey: "id")
+        UserDefaults.standard.removeObject(forKey: "pwd")
+        UserDefaults.standard.removeObject(forKey: "token")
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
